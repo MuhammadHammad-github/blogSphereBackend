@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/MuhammadHammad-github/blogSphereBackend/issues"
   },
-  "homepage": "https://github.com/MuhammadHammad-github/blogSphereBackend#readme"
+  "homepage": "https://github.com/MuhammadHammad-github/blogSphereBackend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.4"
+  }
 }
