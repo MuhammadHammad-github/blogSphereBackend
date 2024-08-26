@@ -1,5 +1,5 @@
-const adminRoute = require("./auth/admin/route");
-const userRoute = require("./auth/user/route");
+const adminRoute = require("./admin/auth/route");
+const userRoute = require("./user/auth/route");
 
 module.exports = {
   adminRoute,

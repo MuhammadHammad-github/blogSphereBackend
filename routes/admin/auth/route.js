@@ -1,5 +1,5 @@
 const express = require("express");
-const { create, login, getAccount } = require("../authCrud");
+const { create, login, getAccount } = require("../../../utils/authCrud");
 const { Admin } = require("../../../schema");
 const verifyAuthToken = require("../../../middelwares/verifyAuthToken");
 const router = express.Router();

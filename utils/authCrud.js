@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const { response, tryCatchError } = require("../../utils");
+const { response, tryCatchError } = require(".");
 const jwt = require("jsonwebtoken");
 const SECRET_PHASE = process.env.SECRET_PHASE;
 
