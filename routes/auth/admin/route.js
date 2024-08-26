@@ -1,12 +1,16 @@
 const express = require("express");
-const { tryCatchError } = require("../../../utils");
-const route = express.Route();
+const { create, login, getAccount } = require("../authCrud");
+const { Admin } = require("../../../schema");
+const verifyAuthToken = require("../../../middelwares/verifyAuthToken");
+const router = express.Router();
 
-route.get("/", (req, res) => {
-  try {
-  } catch (error) {
-    return tryCatchError(res, error);
-  }
+router.get("/", verifyAuthToken, async (req, res) => {
+  await getAccount(res, { id: req.id }, Admin);
 });
-
-module.exports = route;
+router.post("/register", async (req, res) => {
+  await create(res, req.body, Admin);
+});
+router.post("/login", async (req, res) => {
+  await login(res, req.body, Admin);
+});
+module.exports = router;

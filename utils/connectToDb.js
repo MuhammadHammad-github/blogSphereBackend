@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoUri = "mongodb://127.0.0.1:27017/blogSphere";
+const mongoUri = process.env.MONGO_URI;
 const connectToDb = async () => {
   try {
     await mongoose.connect(mongoUri);
