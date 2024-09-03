@@ -1,4 +1,6 @@
-const response = require("./index");
+// const response = require("./index");
+
+const response = require("./response");
 
 const tryCatchError = (res, error) => {
   console.error(error);

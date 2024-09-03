@@ -1,6 +1,8 @@
 const bcrypt = require("bcryptjs");
-const { response, tryCatchError } = require(".");
+// const { response, tryCatchError } = require(".");
 const jwt = require("jsonwebtoken");
+const tryCatchError = require("./tryCatchError");
+const response = require("./response");
 const SECRET_PHASE = process.env.SECRET_PHASE;
 
 const create = async (res, data, model) => {

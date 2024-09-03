@@ -1,7 +1,9 @@
+const { tryCatchError, response } = require("../utils");
+const jwt = require("jsonwebtoken");
 const SECRET_PHASE = process.env.SECRET_PHASE;
 const verifyAuthToken = (req, res, next) => {
   try {
-    const authToken = req.headers["authToken"];
+    const authToken = req.headers["authtoken"];
     if (!authToken) {
       return response(res, 401, { message: "Authorization token missing!" });
     }

@@ -16,8 +16,25 @@ const BlogSchema = new mongoose.Schema({
   },
   description: {
     type: String,
+    required: [true, "Blog cannot be empty"],
+  },
+  shortDescription: {
+    type: String,
     required: [true, "Description cannot be empty"],
   },
-  comments: [{ type: String, userId: mongoose.Schema.Types.ObjectId }],
+
+  comments: [
+    {
+      content: {
+        type: String,
+      },
+      userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      timestamp: { type: Date, default: Date.now },
+    },
+  ],
+  timeStamp: {
+    type: Date,
+    default: Date.now,
+  },
 });
 module.exports = mongoose.model("Blog", BlogSchema);
